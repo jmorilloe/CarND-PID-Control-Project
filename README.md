@@ -1,7 +1,28 @@
 # CarND-Controls-PID
 Self-Driving Car Engineer Nanodegree Program
 
----
+A proportional–integral–derivative controller (PID controller) is a control loop feedback mechanism (controller) commonly used in industrial control systems. A PID controller continuously calculates an error value as the difference between a desired setpoint and a measured process variable and applies a correction based on proportional, integral, and derivative terms which give their name to the controller type.
+
+![pid-controller](https://d17h27t6h515a5.cloudfront.net/topher/2017/March/58cc8ee5_pid/pid.png)
+
+
+**Proportional Term**
+
+The proportional term produces an output value that is proportional to the current error value. The proportional response can be adjusted by multiplying the error by a constant Kp, called the proportional gain constant. A high proportional gain results in a large change in the output for a given change in the error. If the proportional gain is too high, the system can become unstable. In contrast, a small gain results in a small output response to a large input error, and a less responsive or less sensitive controller. If the proportional gain is too low, the control action may be too small when responding to system disturbances. Tuning theory and industrial practice indicate that the proportional term should contribute the bulk of the output change.
+
+**Integral Term**
+
+The contribution from the integral term is proportional to both the magnitude of the error and the duration of the error. The integral in a PID controller is the sum of the instantaneous error over time and gives the accumulated offset that should have been corrected previously. The accumulated error is then multiplied by the integral gain (Ki) and added to the controller output. The integral term accelerates the movement of the process towards setpoint and eliminates the residual steady-state error that occurs with a pure proportional controller. However, since the integral term responds to accumulated errors from the past, it can cause the present value to overshoot the setpoint value.
+
+**Derivative Term**
+
+The derivative of the process error is calculated by determining the slope of the error over time and multiplying this rate of change by the derivative gain Kd. The magnitude of the contribution of the derivative term to the overall control action is termed the derivative gain, Kd. Derivative action predicts system behavior and thus improves settling time and stability of the system.
+
+To find good values for the constants Kp, Ki and Kd I started from suggested values (0.2, 0.004 and 3.0). After some trial and testing I found that these values produced a decent output:
+ 
+> -Kp = 0.1
+> -Ki = 0.0005
+> -Kd = 3.5
 
 ## Dependencies
 
