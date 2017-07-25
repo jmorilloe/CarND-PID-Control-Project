@@ -20,9 +20,9 @@ The derivative of the process error is calculated by determining the slope of th
 
 To find good values for the constants Kp, Ki and Kd I started from suggested values (0.2, 0.004 and 3.0). After some trial and testing I found that these values produced a decent output:
  
-> -Kp = 0.1
-> -Ki = 0.0005
-> -Kd = 3.5
+* Kp = 0.1
+* Ki = 0.0005
+* Kd = 3.5
 
 ## Dependencies
 
